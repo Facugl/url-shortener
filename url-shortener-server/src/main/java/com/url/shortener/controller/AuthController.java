@@ -7,6 +7,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.url.shortener.dtos.LoginRequest;
 import com.url.shortener.dtos.RegisterRequest;
 import com.url.shortener.models.User;
 import com.url.shortener.service.UserService;
@@ -31,6 +32,11 @@ public class AuthController {
         userService.registerUser(user);
 
         return ResponseEntity.status(HttpStatus.OK).body("User registered successfully");
+    }
+
+    @PostMapping("/public/login")
+    public ResponseEntity<?> loginUser(@RequestBody LoginRequest loginRequest) {
+        return ResponseEntity.status(HttpStatus.OK).body(userService.loginUser(loginRequest));
     }
 
 }
