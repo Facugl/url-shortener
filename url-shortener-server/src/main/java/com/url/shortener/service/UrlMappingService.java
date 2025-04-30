@@ -1,6 +1,7 @@
 package com.url.shortener.service;
 
 import java.time.LocalDateTime;
+import java.util.List;
 import java.util.Random;
 
 import org.springframework.stereotype.Service;
@@ -52,6 +53,13 @@ public class UrlMappingService {
         urlMappingResponse.setUsername(urlMapping.getUser().getUsername());
 
         return urlMappingResponse;
+    }
+
+    public List<UrlMappingResponse> getUrlsByUser(User user) {
+        return urlMappingRepository.findByUser(user)
+                .stream()
+                .map(this::toResponse)
+                .toList();
     }
 
 }
