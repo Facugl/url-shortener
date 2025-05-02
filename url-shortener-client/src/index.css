@@ -1,3 +1,75 @@
-@import "tailwindcss";
 @import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
+
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --btn-color: #3364f7;
+    --link-color: #2a5bd7;
+    --navbar-color: #ffffff;
+    --card-gradient: linear-gradient(to right, #38b2ac, #4299e1);
+    --custom-gradient: linear-gradient(to right, #3b82f6, #9333ea);
+    --custom-gradient-2: linear-gradient(to left, #3b82f6, #f43f5e);
+  }
+  html {
+    font-family: "Roboto", sans-serif;
+  }
+}
+
+@layer utilities {
+  /* Gradientes */
+  .bg-custom-gradient {
+    background-image: var(--custom-gradient);
+  }
+
+  .bg-custom-gradient-2 {
+    background-image: var(--custom-gradient-2);
+  }
+
+  .bg-card-gradient {
+    background-image: var(--card-gradient);
+  }
+
+  /* Sombras */
+  .shadow-custom {
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+  }
+
+  .shadow-right {
+    box-shadow: 10px 0px 10px -5px rgba(0, 0, 0, 0.3);
+  }
+
+  /* Colores Personalizados */
+  .bg-navbar {
+    background-color: var(--navbar-color);
+  }
+
+  .bg-btn {
+    background-color: var(--btn-color);
+  }
+
+  .text-btnColor {
+    color: var(--btn-color);
+  }
+
+  .border-btnColor {
+    border-color: var(--btn-color);
+  }
+
+  .bg-navbar {
+    background-color: #ffffff;
+  }
+
+  .text-link {
+    color: var(--link-color);
+  }
+
+  .font-roboto {
+    font-family: "Roboto", sans-serif;
+  }
+
+  .font-montserrat {
+    font-family: "Montserrat", sans-serif;
+  }
+}
