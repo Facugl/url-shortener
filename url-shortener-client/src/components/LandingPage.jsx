@@ -1,10 +1,13 @@
-import React from "react";
+import React, { useState } from "react";
 import Card from "./Card";
 import { motion } from 'motion/react';
 import { useNavigate } from "react-router-dom";
+import { useStoreContext } from "../context/ContextApi";
 
 const LandingPage = () => {
   const navigate = useNavigate();
+  const [loader, setLoader] = useState(false);
+  const { setToken} = useStoreContext();
 
   const dashBoardNavigationHandler = () => {
 
