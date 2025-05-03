@@ -3,6 +3,7 @@ import { useForm } from 'react-hook-form'
 import TextField from './TextField';
 import { Link, useNavigate } from 'react-router-dom';
 import toast from 'react-hot-toast';
+import api from '../api/api';
 
 const RegisterPage = () => {
     const [loader, setLoader] = useState(false);
