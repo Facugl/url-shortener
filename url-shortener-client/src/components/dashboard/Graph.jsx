@@ -19,9 +19,9 @@ ChartJS.register(
     Filler
 );
 
-const Graph = ({ graphData }) => {
-    const labels = graphData?.map((item, i) => `${item.clickDate}`);
-    const userPerDaya = graphData?.map((item) => item.count);
+const Graph = ({ graphData = [] }) => {
+    const labels = graphData.map((item) => item.clickDate) || [];
+    const userPerDaya = graphData.map((item) => item.count) || [];
 
     const data = {
         labels:
@@ -60,7 +60,6 @@ const Graph = ({ graphData }) => {
             y: {
                 beginAtZero: true,
                 ticks: {
-                    // stepSize: 1,
                     callback: function (value) {
                         if (Number.isInteger(value)) {
                             return value.toString();
@@ -81,9 +80,6 @@ const Graph = ({ graphData }) => {
             },
             x: {
                 beginAtZero: true,
-                // ticks: {
-                //   stepSize: 1,
-                // },
                 title: {
                     display: true,
                     text: "Date",
