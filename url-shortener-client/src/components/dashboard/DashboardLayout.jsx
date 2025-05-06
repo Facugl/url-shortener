@@ -16,11 +16,11 @@ const DashboardLayout = () => {
     console.log("ERROR");
   }
 
-  const { isLoading, data: myShortenUrls, refetch } = useFetchTotalClicks(token, (err) => {
-    console.log("Error al obtener total clicks:", err);
+  const { isLoading, data: myShortenUrls, refetch } = useFetchMyShortUrls(token, (err) => {
+    console.log("Error al obtener my shorten urls:", err);
   });
-// console.log("My shorten urls: ", myShortenUrls);
-  const { isLoading: loader, data: totalClicks } = useFetchMyShortUrls(token, (err) => {
+
+  const { isLoading: loader, data: totalClicks } = useFetchTotalClicks(token, (err) => {
     console.log("Error al obtener total clicks:", err);
   })
 
@@ -38,7 +38,7 @@ const DashboardLayout = () => {
               </h3>
             </div>
           )}
-          <Graph graphData={totalClicks || []} />
+          <Graph graphData={totalClicks} />
         </div>
         <div className="py-5 sm:text-end text-center">
           <button
@@ -60,7 +60,7 @@ const DashboardLayout = () => {
               </div>
             </div>
           ) : (
-            <ShortenUrlList data={myShortenUrls} />
+            <ShortenUrlList myShortenUrls={myShortenUrls} />
           )}
         </div>
       </div>

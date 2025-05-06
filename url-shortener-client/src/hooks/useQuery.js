@@ -6,7 +6,7 @@ export const useFetchTotalClicks = (token, onError) => {
     queryKey: ["url-totalclick", token],
     queryFn: async () => {
       const response = await api.get(
-        "/api/urls/total-clicks?start-date=2024-04-28&end-date=2025-12-07",
+        "/api/urls/total-clicks?start-date=2025-04-28&end-date=2025-12-07",
         {
           headers: {
             "Content-Type": "application/json",
@@ -45,7 +45,6 @@ export const useFetchMyShortUrls = (token, onError) => {
       return response.data;
     },
     select: (data) => {
-      console.log("Data in delect functino at FetchMyShortUrls: ", data);
       const sortedDate = data.sort(
         (a, b) => new Date(b.createdDate) - new Date(a.createdDate)
       );

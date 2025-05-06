@@ -1,10 +1,10 @@
 import React from 'react'
 import ShortenItem from './ShortenItem'
 
-const ShortenUrlList = ({ data }) => {
+const ShortenUrlList = ({ myShortenUrls }) => {
   return (
     <div className="my-6 space-y-4">
-        {data?.map((item) => (
+        {myShortenUrls?.map((item) => (
             <ShortenItem key={item.id} {...item} />
         ))}
     </div>
