@@ -50,6 +50,7 @@ const CreateNewShorten = ({ setOpen, refetch }) => {
             setOpen(false);
         } catch (error) {
             toast.error("Create ShortURL Failed");
+            navigate("/error");
         } finally {
             setLoading(false);
         }

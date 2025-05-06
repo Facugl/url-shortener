@@ -48,7 +48,6 @@ const ShortenItem = ({ originalUrl, shortUrl, clickCount, createdDate }) => {
 
         } catch (error) {
             navigate("/error");
-            console.log(error);
         } finally {
             setLoader(false);
         }

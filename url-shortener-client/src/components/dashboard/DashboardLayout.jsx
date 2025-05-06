@@ -6,23 +6,21 @@ import { useFetchMyShortUrls, useFetchTotalClicks } from '../../hooks/useQuery'
 import ShortenPopUp from './ShortenPopUp'
 import { FaLink } from 'react-icons/fa'
 import ShortenUrlList from './ShortenUrlList'
+import { Navigate, useNavigate } from 'react-router-dom'
 
 const DashboardLayout = () => {
   // const refetch = false;
   const { token } = useStoreContext();
   const [shortenPopUp, setShortenPopUp] = useState(false);
+  const navigate = useNavigate();
 
   function onError() {
-    console.log("ERROR");
+    navigate("/error");
   }
 
-  const { isLoading, data: myShortenUrls, refetch } = useFetchMyShortUrls(token, (err) => {
-    console.log("Error al obtener my shorten urls:", err);
-  });
+  const { isLoading: loader, data: myShortenUrls, refetch } = useFetchMyShortUrls(token);
 
-  const { isLoading: loader, data: totalClicks } = useFetchTotalClicks(token, (err) => {
-    console.log("Error al obtener total clicks:", err);
-  })
+  const { isLoading, data: totalClicks } = useFetchTotalClicks(token);
 
   return (
     <div className="lg:px-14 sm:px-8 px-4 min-h-[calc(100vh-64px)]">
