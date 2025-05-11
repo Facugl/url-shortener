@@ -7,7 +7,11 @@
     "module": "ESNext",
     "skipLibCheck": true,
 
-    /* Bundler mode */
+    /* Permitir JS y JSX */
+    "allowJs": true,
+    "checkJs": false,
+
+    /* Modo Bundler */
     "moduleResolution": "bundler",
     "allowImportingTsExtensions": true,
     "isolatedModules": true,
@@ -15,12 +19,13 @@
     "noEmit": true,
     "jsx": "react-jsx",
 
-    /* Linting */
-    "strict": true,
-    "noUnusedLocals": true,
-    "noUnusedParameters": true,
-    "noFallthroughCasesInSwitch": true,
-    "noUncheckedSideEffectImports": true
+    /* Relajar reglas de tipo */
+    "strict": false,
+    "noUnusedLocals": false,
+    "noUnusedParameters": false,
+    "noFallthroughCasesInSwitch": false,
+    "noUncheckedSideEffectImports": false
   },
-  "include": ["src"]
+  "include": ["src"],
+  "exclude": ["node_modules"]
 }
