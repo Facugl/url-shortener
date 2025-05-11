@@ -1,0 +1,24 @@
+# Ignorar archivos de configuración del sistema
+.DS_Store
+Thumbs.db
+
+# Ignorar archivos de logs
+*.log
+
+# Ignorar directorios de build de Maven
+target/
+
+# Ignorar configuración de IDEs
+.idea/
+*.iml
+*.ipr
+*.iws
+.vscode/
+
+# Ignorar archivos de Git
+.git
+.gitignore
+
+# Ignorar wrapper ejecutable de Maven innecesario (solo si no lo usás)
+#mvnw
+#.mvn/
